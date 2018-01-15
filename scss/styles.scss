@@ -1,4 +1,7 @@
-@import 'tools/variables';
+// Tools
+@import 'tools/variable';
+@import 'tools/placeholder';
+@import 'tools/grid';
 
 body{
     background: $black;
