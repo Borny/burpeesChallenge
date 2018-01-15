@@ -1,0 +1,41 @@
+{
+  "name": "burpeeschallenge",
+  "version": "1.0.0",
+  "description": "My 100 days Burpees Challenge app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Borny/burpeesChallenge.git"
+  },
+  "keywords": [
+    "burpees",
+    "challenge",
+    "100",
+    "days",
+    "crossfit",
+    "dedication",
+    "aim",
+    "fitness"
+  ],
+  "author": "Tristan Deloris <borntowebb@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Borny/burpeesChallenge/issues"
+  },
+  "homepage": "https://github.com/Borny/burpeesChallenge#readme",
+  "devDependencies": {
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-jshint": "^2.1.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-notify": "^3.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-ruby-sass": "^3.0.0",
+    "jshint": "^2.9.5"
+  },
+  "dependencies": {}
+}
