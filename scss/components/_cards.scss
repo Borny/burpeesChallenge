@@ -1,0 +1,16 @@
+.card{
+    padding: 5px;
+}
+
+.card-content{
+    min-height: 8.5em;
+    padding: 5px;
+    background: $blue-light2;
+    text-align: center;
+    color: $white;
+    border-radius: 4px;
+}
+
+.newSet-card{
+    background: $gray-light4;
+}

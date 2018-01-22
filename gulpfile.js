@@ -10,15 +10,16 @@ var gulp = require('gulp'),
     gulp.task('sass', function(){
         return sass('scss/styles.scss', {style : 'expanded'})
             .pipe(gulp.dest('css/'))
-            .pipe(rename({suffix:'.min'}))            
-            .pipe(notify({message: 'Sass task complete'}));
+            .pipe(rename({suffix:'.min'}))
+            .pipe(notify({message: 'Sass task complete'}))
+            .pipe(livereload());
     });
 
     gulp.task('js', function(){
         return gulp.src('js/**.js')
             //.pipe(jshint('.jshintrc'))
             //.pipe(jshint.reporter('default'))
-            .pipe(concat('main.js'))
+            // .pipe(concat('main.js'))
             .pipe(gulp.dest('js/'))
             .pipe(rename({suffix: '.min'}))
             .pipe(notify({message: 'Scripts task complete'}));
@@ -28,18 +29,18 @@ var gulp = require('gulp'),
         return del('css/');
     });
 
-    gulp.task('default', ['clean'], function(){
-        gulp.start('sass','js');
-    })
-
     gulp.task('watch', function(){
+        livereload.listen();
+
         gulp.watch('scss/**/*.scss', ['sass']);
 
         gulp.watch('js/*.js', ['js']);
 
-        livereload.listen();
+        gulp.watch(['scss/**','js/**','*.html']).on('change', livereload.changed);
 
-        gulp.watch(['scss/**','js/**']).on('change', livereload.changed);
+    });
 
-    })
+    gulp.task('default', ['clean'], function(){
+        gulp.start('sass','js','watch');
+    });
 

@@ -3,9 +3,15 @@
 @import 'tools/placeholder';
 @import 'tools/grid';
 
-body{
-    background: $black;
-    color: $white;
-    height: 100%;
-    font-size: 1em;
-}
+// Base
+@import 'base/base';
+@import 'base/normalize';
+
+// Modules
+@import 'modules/buttons';
+@import 'modules/modal';
+
+// Components
+@import 'components/main';
+@import 'components/header';
+@import 'components/cards';

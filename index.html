@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Burpees Challenge</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script src="http://localhost:35729/livereload.js"></script>
+</head>
+
+<body>
+    <header>
+        <p>100 Burpees Challenge</p>
+    </header>
+    <div class='container'>
+
+        <div class="row">
+
+            <div class="col-xs-4 card">
+                <div class="card-content">
+                    <p>Day 1</p>
+                    <p>5.00s</p>
+                    <p>4x25</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-xs-4 card">
+            <!-- Open modal button -->
+            <label for="toggle-modal" class="btn_modal-open open_createTask card-content newSet-card">
+                <span>New Set</span>
+            </label>
+        </div>
+
+    </div>
+
+    <!--Modal Create new item-->
+    <div class="modalCheckbox" aria-hidden="true">
+        <input id="toggle-modal" type="checkbox" class="modal-input" autocomplete="off">
+        <label for="toggle-modal" class="modal-overlay"></label>
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h2>Enter a new set</h2>
+            </div>
+            <div class="modal-body">
+                <input id="input_day_number" class="input_addItem" type="text" placeholder="Enter the day number" autocomplete="off">
+                <input id="input_time" class="input_addItem" type="text" placeholder="Enter the time" autocomplete="off">
+                <input id="input_set" class="input_addItem" type="text" placeholder="Enter the set" autocomplete="off">
+            </div>
+            <div class="modal-footer row">
+                <div class="col-6">
+                    <label for="toggle-modal" class="btn_modal_footer btn-modal_close addItem-btn" id="create">
+                        Create
+                    </label>
+                </div>
+                <div class="col-6">
+                        <label for="toggle-modal" class="btn_modal_footer btn-modal_close addItem-btn">
+                            Cancel
+                        </label>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/modal.js"></script>
+
+</body>
+
+</html>
