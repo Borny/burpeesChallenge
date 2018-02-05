@@ -14,33 +14,28 @@
     <header>
         <p>100 Burpees Challenge</p>
     </header>
+
     <div class='container'>
 
         <div class="row">
 
-            <div class="col-xs-4 card">
-                <div class="card-content">
-                    <p>Day 1</p>
-                    <p>5.00s</p>
-                    <p>4x25</p>
-                </div>
-            </div>
-
         </div>
 
-        <div class="col-xs-4 card">
-            <!-- Open modal button -->
-            <label for="toggle-modal" class="btn_modal-open open_createTask card-content newSet-card">
-                <span>New Set</span>
-            </label>
+        <div class="row">
+            <div class="col-xs-3 card">
+                <!-- Open modal button -->
+                <label for="toggle-modal_create" class="btn_modal-open open_createTask card-content newSet-card">
+                    <span>New Set</span>
+                </label>
+            </div>
         </div>
 
     </div>
 
-    <!--Modal Create new item-->
+    <!--Modal create new item-->
     <div class="modalCheckbox" aria-hidden="true">
-        <input id="toggle-modal" type="checkbox" class="modal-input" autocomplete="off">
-        <label for="toggle-modal" class="modal-overlay"></label>
+        <input id="toggle-modal_create" type="checkbox" class="modal-input" autocomplete="off">
+        <label for="toggle-modal_create" class="modal-overlay"></label>
         <div class="modal-dialog">
             <div class="modal-header">
                 <h2>Enter a new set</h2>
@@ -52,15 +47,43 @@
             </div>
             <div class="modal-footer row">
                 <div class="col-6">
-                    <label for="toggle-modal" class="btn_modal_footer btn-modal_close addItem-btn" id="create">
+                    <label for="toggle-modal_create" class="btn_modal_footer btn-modal_close addItem-btn" id="create">
                         Create
                     </label>
                 </div>
                 <div class="col-6">
-                        <label for="toggle-modal" class="btn_modal_footer btn-modal_close addItem-btn">
+                        <label for="toggle-modal_create" class="btn_modal_footer btn-modal_close addItem-btn">
                             Cancel
                         </label>
                     </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal edit item-->
+    <div class="modalCheckbox" aria-hidden="true">
+        <input id="toggle-modal_edit" type="checkbox" class="modal-input" autocomplete="off">
+        <label for="toggle-modal_edit" class="modal-overlay"></label>
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h2>Edit set</h2>
+            </div>
+            <div class="modal-body">
+                <input id="input_day_edit" class="input_addItem" type="text" autocomplete="off">
+                <input id="input_time_edit" class="input_addItem" type="text" autocomplete="off">
+                <input id="input_set_edit" class="input_addItem" type="text" autocomplete="off">
+            </div>
+            <div class="modal-footer row">
+                <div class="col-6">
+                    <label for="toggle-modal_edit" class="btn_modal_footer btn-modal_close addItem-btn" id="edit">
+                        Edit
+                    </label>
+                </div>
+                <div class="col-6">
+                    <label for="toggle-modal_edit" class="btn_modal_footer btn-modal_close addItem-btn">
+                        Cancel
+                    </label>
+                </div>
             </div>
         </div>
     </div>

@@ -1,6 +1,6 @@
 // BODY overflow hidden
 var body = document.querySelector('body'),
-    modalTriggerInput = document.getElementById('toggle-modal');
+    modalTriggerInput = document.getElementById('toggle-modal_create');
 
 // Adds overflow hidden to the body tag when then nav and modal are open
 modalTriggerInput.addEventListener('click', function () {

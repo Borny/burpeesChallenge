@@ -892,12 +892,19 @@ header p {
 }
 
 .card-content {
+  position: relative;
   min-height: 8.5em;
   padding: 5px;
   background: #52CEE2;
   text-align: center;
   color: #fff;
   border-radius: 4px;
+}
+
+.edit-content {
+  position: absolute;
+  top: .7em;
+  right: .7em;
 }
 
 .newSet-card {
