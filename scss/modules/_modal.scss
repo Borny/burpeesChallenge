@@ -16,9 +16,6 @@
     &:focus {
         cursor: pointer;
     }
-    &:active {
-        color: darken($red, 5);
-    }
 }
 
 .modalCheckbox {

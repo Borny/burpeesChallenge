@@ -793,9 +793,6 @@ template {
 .btn-modal_close:hover, .btn-modal_close:focus {
   cursor: pointer;
 }
-.btn-modal_close:active {
-  color: #fc455b;
-}
 
 .modalCheckbox .modal-overlay {
   display: none;

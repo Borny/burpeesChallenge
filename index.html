@@ -88,9 +88,56 @@
         </div>
     </div>
 
+
+
+    <textarea id="message" name="message" onchange="sessionStorage.message=this.value"></textarea>
+
+<p style="color:white"> You've been here : <span id="fuck"></span> fois...</p>
+
+
+
+
+<section>
+    <form id="form" action="" method="">
+        <input id="description" name="description" type="text" />
+        <input id="add" type="submit" value="Add" />
+        <button id="clear">Clear All</button>
+    </form>
+    
+    <div id="alert" style="color:white"></div>
+    
+    <ul id="todos"></ul>
+
+</section>
+
+
+
+
+
     <script src="js/main.js"></script>
     <script src="js/modal.js"></script>
-
+    <script>
+        // Détection
+        if(typeof localStorage!='undefined') {
+          // Récupération de la valeur dans web storage
+          var nbvisites = localStorage.getItem('fuck');
+          // Vérification de la présence du compteur
+          if(nbvisites!=null) {
+            // Si oui, on convertit en nombre entier la chaîne de texte qui fut stockée
+            nbvisites = parseInt(nbvisites);
+          } else {
+            nbvisites = 1;
+          }
+          // Incrémentation
+          nbvisites++;
+          // Stockage à nouveau en attendant la prochaine visite...
+          localStorage.setItem('fuck',nbvisites);
+          // Affichage dans la page
+          document.getElementById('fuck').innerHTML = nbvisites;
+        } else {
+          alert("localStorage n'est pas supporté");
+        }
+        </script>
 </body>
 
 </html>
