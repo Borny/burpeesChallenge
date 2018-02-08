@@ -36,11 +36,10 @@ var gulp = require('gulp'),
 
         //gulp.watch('js/*.js', ['js']);
 
-        gulp.watch(['scss/**','js/**','*.html']).on('change', livereload.changed);
+        gulp.watch(['scss/**','js/**','*.html'], ['sass']).on('change', livereload.changed);
 
     });
 
     gulp.task('default', ['clean'], function(){
         gulp.start('sass','js','watch');
     });
-

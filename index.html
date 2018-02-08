@@ -17,7 +17,7 @@
 
     <div class='container'>
 
-        <div class="row">
+        <div id="row" class="row">
 
         </div>
 
@@ -30,6 +30,8 @@
             </div>
         </div>
 
+        <button class="btn-clear">Clear</button>
+
     </div>
 
     <!--Modal create new item-->
@@ -41,9 +43,11 @@
                 <h2>Enter a new set</h2>
             </div>
             <div class="modal-body">
-                <input id="input_day_number" class="input_addItem" type="text" placeholder="Enter the day number" autocomplete="off">
-                <input id="input_time" class="input_addItem" type="text" placeholder="Enter the time" autocomplete="off">
-                <input id="input_set" class="input_addItem" type="text" placeholder="Enter the set" autocomplete="off">
+                <form>
+                    <input id="input_day_number" class="input_addItem" type="text" placeholder="Enter the day number" autocomplete="off">
+                    <input id="input_time" class="input_addItem" type="text" placeholder="Enter the time" autocomplete="off">
+                    <input id="input_set" class="input_addItem" type="text" placeholder="Enter the set" autocomplete="off">
+                </form>
             </div>
             <div class="modal-footer row">
                 <div class="col-6">
