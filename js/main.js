@@ -57,24 +57,4 @@ edit.addEventListener('click', function(){
         inputSetEdit = document.getElementById('input_set_edit'),
         inputDayEditValue = this.inputDayEdit.value;
 
-
-})
-
-var add = document.querySelector('#add'),
-    descriptionValue = document.querySelector('#description').value,
-    alertPopUp = document.querySelector('#alert');
-
-
-add.addEventListener('click', function(){
-
-    console.log("the button add was clicked");
-        console.log(descriptionValue);
-        console.log(alertPopUp);
-
-    if(descriptionValue === ''){
-        alertPopUp.innerHTML = 'you left the input empty';
-
-        return false; // the browser doesn't read the rest of the code
-
-    }
 })

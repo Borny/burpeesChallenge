@@ -32,9 +32,9 @@ var gulp = require('gulp'),
     gulp.task('watch', function(){
         livereload.listen();
 
-        gulp.watch('scss/**/*.scss', ['sass']);
+        //gulp.watch('scss/**/*.scss', ['sass']);
 
-        gulp.watch('js/*.js', ['js']);
+        //gulp.watch('js/*.js', ['js']);
 
         gulp.watch(['scss/**','js/**','*.html']).on('change', livereload.changed);
 
