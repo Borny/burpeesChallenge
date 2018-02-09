@@ -777,6 +777,14 @@ template {
   display: none;
 }
 
+.btn-clear {
+  background: #FC5E71;
+  border: none;
+  border-radius: 2px;
+  padding: 5px 10px;
+  color: #fff;
+}
+
 .btn_modal-open {
   display: block;
 }

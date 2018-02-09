@@ -1,3 +1,4 @@
+// Defining the main variables
 var row = document.querySelector('#row'),
     create = document.getElementById('create'),
     inputDay = document.getElementById('input_day_number');
@@ -7,62 +8,23 @@ var row = document.querySelector('#row'),
     clear = document.querySelector('.btn-clear'),
 
     // checks if localStorage already holds some data
+    //if it does then we store in an array,
+    //if not then we create an empty array that will be filled later
     cardsArray = localStorage.getItem('cards') ? JSON.parse(localStorage.getItem('cards')) : [];
 
+    // Sets the localStorage with the data held in the cardsArray if any
     localStorage.setItem('cards', JSON.stringify(cardsArray));
+
+    //Allows us to reuse the data in localStorage by creating an array
     var data = JSON.parse(localStorage.getItem('cards'));
 
-// Create a new set when the "create" button is clicked
-/*create.addEventListener('click', function () {
+// Create a new set/card
+var createCard = function(dayValue,timeValue,setValue){
 
+    // Creating the elements needed to make a card
     var card = document.createElement('div'),
         cardContent = document.createElement('div'),
-        editContent = document.createElement('label'),
         dayNumber = document.createElement('p'),
-        time = document.createElement('p'),
-        set = document.createElement('p'),
-        inputDayValue = inputDay.value,
-        inputTimeValue = inputTime.value,
-        inputSetValue = inputSet.value;
-
-    card.classList.add('col-xs-3', 'card');
-    cardContent.classList.add('card-content');
-    editContent.classList.add('edit-content');
-    editContent.textContent = 'x';
-    editContent.setAttribute('for', 'toggle-modal_edit');
-    row.appendChild(card);
-    card.appendChild(cardContent);
-    cardContent.appendChild(editContent);
-
-    // add day
-    cardContent.appendChild(dayNumber);
-    dayNumber.classList.add('card-content_day');
-
-    // add time
-    cardContent.appendChild(time);
-    time.classList.add('card-content_time');
-
-    // add set
-    cardContent.appendChild(set);
-    set.classList.add('card-content_set');
-
-    dayNumber.textContent = 'Day ' + inputDayValue;
-    time.textContent = inputTimeValue;
-    set.textContent = inputSetValue;
-
-    inputDay.value = '';
-    inputTime.value = '';
-    inputSet.value = '';
-
-    localStorage.setItem('dayValue', JSON.stringify(inputDayValue));
-
-});*/
-
-var createCard = function(allValues){
-
-    var card = document.createElement('div'),
-        cardContent = document.createElement('div'),
-        dayNumber = document.createElement('p'), 
         time = document.createElement('p'),
         set = document.createElement('p');
 
@@ -77,74 +39,65 @@ var createCard = function(allValues){
     // add day
     cardContent.appendChild(dayNumber);
     dayNumber.classList.add('card-content_day');
-    dayNumber.textContent = 'Day ' + inputDay.value;    
+    dayNumber.textContent = 'Day ' + dayValue;
 
     // add time
     cardContent.appendChild(time);
     time.classList.add('card-content_time');
-    time.textContent = inputTime.value;    
+    time.textContent = timeValue;
 
     // add set
     cardContent.appendChild(set);
     set.classList.add('card-content_set');
-    set.textContent = inputSet.value;
-    
-    inputDay.value = '';
-    inputTime.value = '';
-    inputSet.value = '';
-
-    cardsArray.push(allValues);
-    localStorage.setItem('cards', JSON.stringify(cardsArray));
+    set.textContent = setValue;
 
 }
 
+// Displays the card/set when the button "create" is clicked
 create.addEventListener('click', function(){
 
-    createCard(allValues);
+    // Stocking the values entered in an array
+    var cardsContentArray = [inputDay.value,inputTime.value,inputSet.value];
 
-    var allValues = [
-        inputDay.value,
-        inputTime.value,
-        inputSet.value
-    ]
+    // Updates the cardsArray array
+    cardsArray.push(cardsContentArray);
 
+    // Updating the localStorage
+    localStorage.setItem('cards', JSON.stringify(cardsArray));
+
+    // Calling the createCard function when the button "create" is clicked
+    createCard(inputDay.value,inputTime.value,inputSet.value);
+
+    // Resetting the input values to empty once the set has been created
     inputDay.value = '';
     inputTime.value = '';
     inputSet.value = '';
 
 })
 
+// Displays the data held in the localStorage when reloading
+/*
+// Use of the forEach loop
+data.forEach(function(item){
+        createCard(item[0],item[1]);
+})
+*/
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Use of the map method (functional programming)
+var reload = data.map(function(item){
+    createCard(item[0],item[1],item[2])
+})
 
 // Clears the data stored in the localStorage
 clear.addEventListener('click', function(){
     localStorage.clear();
 
-    // && removes all cards    
+    // && removes all cards
     while(row.firstChild){
         row.removeChild(row.firstChild);
     }
-    
+
 })
 
 console.log(localStorage);
+console.log(data);
