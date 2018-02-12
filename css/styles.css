@@ -778,8 +778,17 @@ template {
 }
 
 .btn-clear {
+  float: right;
   background: #FC5E71;
   border: none;
+  border-radius: 2px;
+  padding: 5px 10px;
+  color: #fff;
+}
+
+.btn-add {
+  float: left;
+  background: grey;
   border-radius: 2px;
   padding: 5px 10px;
   color: #fff;
@@ -910,8 +919,4 @@ header p {
   position: absolute;
   top: .7em;
   right: .7em;
-}
-
-.newSet-card {
-  background: #D6D6D6;
 }
