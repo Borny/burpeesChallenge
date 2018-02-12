@@ -26,7 +26,8 @@ var createCard = function(dayValue,timeValue,setValue){
         cardContent = document.createElement('div'),
         dayNumber = document.createElement('p'),
         time = document.createElement('p'),
-        set = document.createElement('p');
+        set = document.createElement('p'),
+        editButton = document.createElement('label');
 
     // add card
     row.appendChild(card);
@@ -51,6 +52,10 @@ var createCard = function(dayValue,timeValue,setValue){
     set.classList.add('card-content_set');
     set.textContent = setValue;
 
+    // add edit button
+    cardContent.appendChild(editButton);
+    editButton.classList.add('btn-edit');
+    editButton.textContent = 'x';
 }
 
 // Displays the card/set when the button "create" is clicked
@@ -67,6 +72,12 @@ create.addEventListener('click', function(){
 
     // Calling the createCard function when the button "create" is clicked
     createCard(inputDay.value,inputTime.value,inputSet.value);
+
+    /* Displays an error message if one of the input is left empty
+        if(inputDay.value === '' || inputTime.value === '' || inputSet.value === ''){
+
+        }
+    */
 
     // Resetting the input values to empty once the set has been created
     inputDay.value = '';
