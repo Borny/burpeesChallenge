@@ -26,12 +26,12 @@ var createCard = function(dayValue,timeValue,setValue){
         cardContent = document.createElement('div'),
         dayNumber = document.createElement('p'),
         time = document.createElement('p'),
-        set = document.createElement('p'),
-        editButton = document.createElement('label');
+        set = document.createElement('p');
 
     // add card
     row.appendChild(card);
     card.classList.add('card', 'col-xs-3');
+    card.id = 'day_' + dayValue;
 
     // add card content block
     card.appendChild(cardContent);
@@ -52,10 +52,6 @@ var createCard = function(dayValue,timeValue,setValue){
     set.classList.add('card-content_set');
     set.textContent = setValue;
 
-    // add edit button
-    cardContent.appendChild(editButton);
-    editButton.classList.add('btn-edit');
-    editButton.textContent = 'x';
 }
 
 // Displays the card/set when the button "create" is clicked
@@ -73,11 +69,11 @@ create.addEventListener('click', function(){
     // Calling the createCard function when the button "create" is clicked
     createCard(inputDay.value,inputTime.value,inputSet.value);
 
-    /* Displays an error message if one of the input is left empty
-        if(inputDay.value === '' || inputTime.value === '' || inputSet.value === ''){
+    /* // Displays an error message if one of the input is left empty
+    if(inputDay.value === '' || inputTime.value === '' || inputSet.value === ''){
 
-        }
-    */
+    } */
+
 
     // Resetting the input values to empty once the set has been created
     inputDay.value = '';
@@ -98,6 +94,9 @@ data.forEach(function(item){
 var reload = data.map(function(item){
     createCard(item[0],item[1],item[2])
 })
+
+
+
 
 // Clears the data stored in the localStorage
 clear.addEventListener('click', function(){
