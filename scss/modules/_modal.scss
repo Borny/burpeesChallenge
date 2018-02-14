@@ -18,7 +18,8 @@
     }
 }
 
-.modalCheckbox {
+.modalCheckbox,
+.modal {
     .modal-overlay {
         // modal background
         display: none;
@@ -67,6 +68,20 @@
             border-bottom-right-radius: 4px;
             text-align: center;
         }
+    }
+}
+
+.modal-display{
+    .modal-overlay {
+        display: block;
+    }
+    .modal-dialog {
+        -webkit-transition: .5s;
+        -moz-transition: .5s;
+        -ms-transition: .5s;
+        -o-transition: .5s;
+        transition: .5s;
+        top: 100px;
     }
 }
 

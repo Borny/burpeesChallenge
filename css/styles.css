@@ -817,7 +817,8 @@ template {
   cursor: pointer;
 }
 
-.modalCheckbox .modal-overlay {
+.modalCheckbox .modal-overlay,
+.modal .modal-overlay {
   display: none;
   background: rgba(0, 0, 0, 0.6);
   position: fixed;
@@ -827,7 +828,8 @@ template {
   right: 0;
   z-index: 200;
 }
-.modalCheckbox .modal-dialog {
+.modalCheckbox .modal-dialog,
+.modal .modal-dialog {
   position: fixed;
   top: -100%;
   left: 50%;
@@ -841,7 +843,8 @@ template {
   border-radius: 4px;
   background: #fff;
 }
-.modalCheckbox .modal-dialog .modal-header {
+.modalCheckbox .modal-dialog .modal-header,
+.modal .modal-dialog .modal-header {
   padding: 15px;
   background: #00A3E4;
   border-top-left-radius: 4px;
@@ -849,21 +852,36 @@ template {
   text-align: center;
   color: #fff;
 }
-.modalCheckbox .modal-dialog .modal-header h2 {
+.modalCheckbox .modal-dialog .modal-header h2,
+.modal .modal-dialog .modal-header h2 {
   margin: 0;
   font-family: Base02;
 }
-.modalCheckbox .modal-dialog .modal-body {
+.modalCheckbox .modal-dialog .modal-body,
+.modal .modal-dialog .modal-body {
   padding: 20px;
   background: #00A3E4;
   text-align: center;
 }
-.modalCheckbox .modal-dialog .modal-footer {
+.modalCheckbox .modal-dialog .modal-footer,
+.modal .modal-dialog .modal-footer {
   padding: 20px;
   background: #787878;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
   text-align: center;
+}
+
+.modal-display .modal-overlay {
+  display: block;
+}
+.modal-display .modal-dialog {
+  -webkit-transition: .5s;
+  -moz-transition: .5s;
+  -ms-transition: .5s;
+  -o-transition: .5s;
+  transition: .5s;
+  top: 100px;
 }
 
 .modal-input {

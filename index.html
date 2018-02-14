@@ -65,9 +65,8 @@
     </div>
 
     <!--Modal edit item-->
-    <div class="modalCheckbox" aria-hidden="true">
-        <input id="toggle-modal_edit" type="checkbox" class="modal-input" autocomplete="off">
-        <label for="toggle-modal_edit" class="modal-overlay"></label>
+    <div class="modal" aria-hidden="true">
+        <div class="modal-overlay" id="modal-overlay"></div>
         <div class="modal-dialog">
             <div class="modal-header">
                 <h2>Edit set</h2>
@@ -79,14 +78,14 @@
             </div>
             <div class="modal-footer row">
                 <div class="col-6">
-                    <label for="toggle-modal_edit" class="btn_modal_footer btn-modal_close addItem-btn" id="edit">
+                    <div class="btn_modal_footer btn-modal_close edit-btn" id="edit">
                         Edit
-                    </label>
+                    </div>
                 </div>
                 <div class="col-6">
-                    <label for="toggle-modal_edit" class="btn_modal_footer btn-modal_close addItem-btn">
+                    <div class="btn_modal_footer btn-modal_close" id="edit-cancel">
                         Cancel
-                    </label>
+                    </div>
                 </div>
             </div>
         </div>
