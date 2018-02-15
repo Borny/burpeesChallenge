@@ -785,6 +785,10 @@ template {
   padding: 5px 10px;
   color: #fff;
 }
+.btn-clear:hover {
+  background: #fc455b;
+  cursor: pointer;
+}
 
 .btn-add {
   float: left;
@@ -913,6 +917,20 @@ template {
   padding: 15px;
 }
 
+.error {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 5px;
+  background: #FC5E71;
+  opacity: 0;
+  text-align: center;
+}
+.error.show {
+  opacity: 1;
+}
+
 header {
   padding: 1em;
   z-index: 50;
@@ -927,6 +945,9 @@ header p {
 
 .card {
   padding: 5px;
+}
+.card:hover {
+  cursor: pointer;
 }
 
 .card-content {

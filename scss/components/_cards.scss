@@ -1,5 +1,8 @@
 .card{
     padding: 5px;
+    &:hover{
+        cursor: pointer;
+    }
 }
 
 .card-content{

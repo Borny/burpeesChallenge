@@ -5,6 +5,10 @@
     border-radius: 2px;
     padding: 5px 10px;
     color: $white;
+    &:hover{
+        background: darken($red, 5%);
+        cursor: pointer;
+    }
 }
 
 .btn-add{
