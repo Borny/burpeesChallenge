@@ -329,6 +329,10 @@ body .modal-open {
   overflow: hidden;
 }
 
+.hidden {
+  display: none !important;
+}
+
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Change the default font family in all browsers (opinionated).
@@ -793,9 +797,8 @@ template {
 .btn-add {
   float: left;
   background: grey;
-  border-radius: 2px;
-  padding: 5px 10px;
-  color: #fff;
+  border-radius: 100%;
+  padding: 15px;
 }
 
 .btn-edit {
@@ -905,11 +908,16 @@ template {
 }
 
 .input_addItem {
+  width: 200px;
   border: none;
   border-radius: 2px;
   background: #fff;
   margin: 5px 0;
   padding: 5px;
+}
+
+.input_label {
+  display: block;
 }
 
 .container {

@@ -105,9 +105,14 @@
 }
 
 .input_addItem{
+    width: 200px;
     border: none;
     border-radius: 2px;
     background: $white;
     margin: 5px 0;
     padding: 5px;
+}
+
+.input_label{
+    display: block;
 }

@@ -29,7 +29,8 @@ var createCard = function(dayValue,timeValue,setValue){
     // Creating the elements needed to make a card
     var makeCard = document.createElement('div'),
         cardContent = document.createElement('div'),
-        dayNumber = document.createElement('p'),
+        dayText = document.createElement('p'),
+        dayNumber = document.createElement('span'),
         time = document.createElement('p'),
         set = document.createElement('p');
 
@@ -43,9 +44,11 @@ var createCard = function(dayValue,timeValue,setValue){
     cardContent.classList.add('card-content');
 
     // add day
-    cardContent.appendChild(dayNumber);
+    cardContent.appendChild(dayText);
+    dayText.textContent = 'Day ';
+    dayText.appendChild(dayNumber);
     dayNumber.classList.add('card-content_day');
-    dayNumber.textContent = 'Day ' + dayValue;
+    dayNumber.textContent = dayValue;
 
     // add time
     cardContent.appendChild(time);
@@ -64,7 +67,7 @@ create.addEventListener('click', function(){
 
     // Stocking the values entered in an array
     var cardsContentArray = [inputDay.value,inputTime.value,inputSet.value],
-        keyID = 'day' + inputDay.value;
+    keyID = 'day' + inputDay.value;
 
     // Updates the cardsArray array
     cardsArray[keyID] = cardsContentArray;
@@ -73,31 +76,28 @@ create.addEventListener('click', function(){
     localStorage.setItem('cards', JSON.stringify(cardsArray));
 
     // Calling the createCard function when the button "create" is clicked
-    createCard(inputDay.value,inputTime.value,inputSet.value);
-    
+    if(inputDay.value === ''){
+        errorMessage.classList.add('show');
+    } else{
+        createCard(inputDay.value,inputTime.value,inputSet.value);
+        document.location.reload(true);
+    };
+
     // Resetting the input values to empty once the set has been created
     inputDay.value = '';
     inputTime.value = '';
     inputSet.value = '';
 
     // Reloading the page each time a card is created so the edit function can work on the newly created cards
-    document.location.reload(true);
 
 })
 
-// Use of the forEach method
-//data.forEach(function(item){
-//    createCard(item[0],item[1],item[2])    
-//})
-
 // Use of the map method (functional programming)
 var reload = function(){
-
     for (var key in data){
         createCard(data[key][0],data[key][1],data[key][2]);
     }
 }
-
 reload();
 
 // Open the edit modal
@@ -130,15 +130,10 @@ card.forEach(function(item){
         // Edits the card when clicking on the edit button
         edit.addEventListener('click',function(){
 
-            // Defining the modal edit input
-            inputEditDay = document.querySelector('#input_day_edit');
-            inputEditTime = document.querySelector('#input_time_edit');
-            inputEditSet = document.querySelector('#input_set_edit');
-
             // Defining the input values
-            inputEditDayValue = inputEditDay.value;
-            inputEditTimeValue = inputEditTime.value;
-            inputEditSetValue = inputEditSet.value;
+            inputEditDayValue = document.querySelector('#input_day_edit').value;
+            inputEditTimeValue = document.querySelector('#input_time_edit').value;
+            inputEditSetValue = document.querySelector('#input_set_edit').value;
 
             // Editing the card with the values entered in the modal
             cardEdited.querySelector('.card-content_day').textContent = inputEditDayValue;
@@ -150,15 +145,13 @@ card.forEach(function(item){
 
             // Updates the cardsArray array
             cardsArray[cardID] = cardsContentArray;
-            
-            // Updating the localStorage
+
+            // // Updating the localStorage
             localStorage.setItem('cards', JSON.stringify(cardsArray));
 
             // Closing the modals when the edit button is clicked
             var modal = document.querySelector('.modal');
             modal.classList.remove('modal-display');
-
-            console.log(data);
 
         })
 
@@ -189,8 +182,7 @@ clear.addEventListener('click', function(){
 
     // Reloading the page
     document.location.reload(true);
-    
+
 })
 
-console.log(localStorage);
 console.log(data);

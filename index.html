@@ -24,9 +24,7 @@
 
         <div class="row">
                 <!-- Open modal button -->
-                <label for="toggle-modal_create" class="btn_modal-open btn-add">
-                    <span>New Set</span>
-                </label>
+                <label for="toggle-modal_create" class="btn_modal-open btn-add"></label>
 
                 <!-- Clear all sets button -->
                 <button class="btn-clear">Clear</button>
@@ -51,7 +49,7 @@
                 </form>
             </div>
             <div class="modal-footer row">
-                <div class="col-6">
+                <div class="col-6 btn-create">
                     <label for="toggle-modal_create" class="btn_modal_footer btn-modal_close" id="create">
                         Create
                     </label>
@@ -73,9 +71,13 @@
                 <h2>Edit set</h2>
             </div>
             <div class="modal-body">
-                <input id="input_day_edit" class="input_addItem" type="text" autocomplete="off">
-                <input id="input_time_edit" class="input_addItem" type="text" autocomplete="off">
-                <input id="input_set_edit" class="input_addItem" type="text" autocomplete="off">
+                <form>
+                    <input id="input_day_edit" class="input_addItem hidden" type="text" autocomplete="off" disabled>
+                    <label class="input_label">Edit the time</label>
+                    <input id="input_time_edit" class="input_addItem" type="text" autocomplete="off">
+                    <label class="input_label">Edit the set</label>
+                    <input id="input_set_edit" class="input_addItem" type="text" autocomplete="off">
+                </form>
             </div>
             <div class="modal-footer row">
                 <div class="col-6">
