@@ -186,3 +186,7 @@ clear.addEventListener('click', function(){
 })
 
 console.log(data);
+
+function euroToDollar(euro){
+    return euro * 1.3;
+}
