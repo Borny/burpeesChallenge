@@ -1,0 +1,32 @@
+//////////
+// FONTS
+//////////
+// Roboto
+@import url(//fonts.googleapis.com/css?family=Roboto:700,400,500,300);
+$fontRoboto: 'Roboto',
+Arial,
+sans-serif,
+serif,
+Helvetica;
+
+// Base 02
+@font-face {
+    font-family: 'Base02';
+    src: url('../../../assets/fonts/Base02.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+///////////
+// COLORS
+///////////
+
+// Colors definition
+$white: #FFF;
+$mediumaquamarine: mediumaquamarine;
+$blueLight: #52CEE2;
+
+
+// Header
+$headerBackground: $blueLight;
+$headerColor: $white;

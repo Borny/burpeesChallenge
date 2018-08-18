@@ -1,45 +1,38 @@
 var gulp = require('gulp'),
-    sass = require('gulp-ruby-sass'),
-    jshint = require('gulp-jshint'),
-    concat = require('gulp-concat'),
-    rename = require('gulp-rename'),
-    del = require('del'),
-    notify = require('gulp-notify'),
-    livereload = require('gulp-livereload');
+    sass = require('gulp-sass'),
+    connect = require('gulp-connect'),
+    watch = require('gulp-watch');
 
-    gulp.task('sass', function(){
-        return sass('scss/styles.scss', {style : 'expanded'})
-            .pipe(gulp.dest('css/'))
-            .pipe(rename({suffix:'.min'}))
-            .pipe(notify({message: 'Sass task complete'}))
-            .pipe(livereload());
-    });
+gulp.task('sass', function () {
+    gulp.src('src/scss/style.scss')
+        .pipe(sass({
+            style: 'expanded'
+        }))
+        .pipe(gulp.dest('dist/css'))
+        .pipe(connect.reload())
+})
 
-    gulp.task('js', function(){
-        return gulp.src('js/**.js')
-            //.pipe(jshint('.jshintrc'))
-            //.pipe(jshint.reporter('default'))
-            // .pipe(concat('main.js'))
-            .pipe(gulp.dest('js/'))
-            .pipe(rename({suffix: '.min'}))
-            .pipe(notify({message: 'Scripts task complete'}));
-    });
+gulp.task('html', function () {
+    gulp.src('index.html')
+        .pipe(connect.reload());
+})
 
-    gulp.task('clean', function(){
-        return del('css/');
-    });
+gulp.task('js', function () {
+    gulp.src('src/js/*')
+        .pipe(connect.reload());
+})
 
-    gulp.task('watch', function(){
-        livereload.listen();
+gulp.task('watch', function () {
+    gulp.watch('src/scss/**/*.scss', ['sass']);
+    gulp.watch('index.html', ['html']);
+    gulp.watch('src/js/*', ['js']);
+})
 
-        //gulp.watch('scss/**/*.scss', ['sass']);
+gulp.task('connect', function () {
+    connect.server({
+        root: '.',
+        livereload: true
+    })
+})
 
-        //gulp.watch('js/*.js', ['js']);
-
-        gulp.watch(['scss/**','js/**','*.html'], ['sass']).on('change', livereload.changed);
-
-    });
-
-    gulp.task('default', ['clean'], function(){
-        gulp.start('sass','js','watch');
-    });
+gulp.task('default', ['sass', 'html', 'js', 'watch', 'connect']);

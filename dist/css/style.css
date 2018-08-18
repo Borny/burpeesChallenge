@@ -1,0 +1,33 @@
+@import url(//fonts.googleapis.com/css?family=Roboto:700,400,500,300);
+@font-face {
+  font-family: 'Base02';
+  src: url("../../../assets/fonts/Base02.ttf");
+  font-weight: normal;
+  font-style: normal; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+  *:before, *:after {
+    box-sizing: border-box; }
+
+html,
+body {
+  width: 100%;
+  font-family: "Roboto", Arial, sans-serif, serif, Helvetica; }
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px; }
+
+header {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #52CEE2;
+  align-content: stretch; }
+  header p {
+    color: #FFF;
+    text-transform: uppercase; }
