@@ -1,10 +1,22 @@
+// Data
+const data = (localStorage.getItem('itemList'))
+    ? JSON.parse(localStorage.getItem('itemList'))
+    : {
+        itemList: []
+    }
+
 // Defining variables
 const addItemBtn = document.getElementById('add-item-btn'), // add button
     addItemInput = document.getElementById('add-item-input'); // add input
 
-// Data
-const data = {
-    itemList: []
+// Displays the list on page load
+function renderItemList() {
+    localStorage.getItem(data.itemList)
+
+    data.itemList.map((item) => {
+        const value = item;
+        createItem(value);
+    })
 }
 
 // Add item with a click event
@@ -36,12 +48,11 @@ addItemInput.addEventListener('keydown', (e) => {
 
         updateData()
     }
-
-
 })
 
- function updateData(){
- }
+function updateData() {
+    localStorage.setItem('itemList', JSON.stringify(data));
+}
 
 // Create item
 const createItem = (text) => {
@@ -87,3 +98,6 @@ const removeItem = function () {
     updateData()
 
 }
+
+// Calls the render function
+renderItemList();
