@@ -8,11 +8,10 @@ Arial,
 sans-serif,
 serif,
 Helvetica;
-
 // Base 02
 @font-face {
     font-family: 'Base02';
-    src: url('../../../assets/fonts/Base02.ttf');
+    src: url('../../src/assets/fonts/Base02.ttf');
     font-weight: normal;
     font-style: normal;
 }
@@ -20,13 +19,30 @@ Helvetica;
 ///////////
 // COLORS
 ///////////
-
 // Colors definition
 $white: #FFF;
+$black: #000;
+$gray: #444;
+$grayLight: #edf0f1;
+
+$green: #25b99a;
+
 $mediumaquamarine: mediumaquamarine;
 $blueLight: #52CEE2;
+$blueMedium: #007680;
+$blueDark: #0078ff;
+$purple: #cf00ff;
 
+// Body
+$body-background: $grayLight;
 
 // Header
 $headerBackground: $blueLight;
-$headerColor: $white;
+$headerColor: $gray;
+// Item-content
+$backgroundItemContent: $blueDark;
+// Add Item
+$addItemContainerBackground: $green;
+// Add Item Button
+$addItemBtn-background: $purple;
+$addItemBtn-color: $white;
