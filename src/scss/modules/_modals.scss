@@ -1,0 +1,112 @@
+.btn-modal_close {
+    color: $white;
+    font-weight: bold;
+    font-family: Base02;
+    &:hover,
+    &:focus {
+        cursor: pointer;
+    }
+}
+
+.modalCheckbox,
+.modal {
+    .modal-overlay {
+        // modal background
+        display: none;
+        background: rgba(0, 0, 0, .6);
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: $zindex-modal-overlay;
+    }
+    .modal-dialog {
+        position: fixed;
+        top: -100%;
+        left: 50%;
+        width: 300px;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        transform: translateX(-50%);
+        z-index: $zindex-modal-dialog;
+        border-radius: 4px;
+        background: $white;
+        .modal-header {
+            padding: 1rem 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: $blue;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            color: $white;
+            h2 {
+                margin: 0;
+                font-family: Base02;
+            }
+        }
+        .modal-body {
+            padding: 0 0 1rem;
+            background: $blue;
+            text-align: center;
+        }
+        .modal-footer {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 50px;
+            background: $gray-light;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+        }
+    }
+}
+
+.modal-display {
+    .modal-overlay {
+        display: block;
+    }
+    .modal-dialog {
+        -webkit-transition: .5s;
+        -moz-transition: .5s;
+        -ms-transition: .5s;
+        -o-transition: .5s;
+        transition: .5s;
+        top: 100px;
+    }
+}
+
+.modal-input {
+    position: absolute;
+    opacity: 0;
+    &:checked {
+        //Displays the modal
+        ~.modal-overlay {
+            display: block;
+        }
+        ~.modal-dialog {
+            -webkit-transition: .5s;
+            -moz-transition: .5s;
+            -ms-transition: .5s;
+            -o-transition: .5s;
+            transition: .5s;
+            top: 100px;
+        }
+    }
+}
+
+.input_addItem {
+    width: 200px;
+    border: none;
+    border-radius: 2px;
+    background: $white;
+    margin: 5px 0;
+    padding: 5px;
+}
+
+.input_label {
+    display: block;
+}

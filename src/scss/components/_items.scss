@@ -1,19 +1,22 @@
-.items-container {
-    width: 100%;
-    display: flex;
-    flex-flow: row wrap;
+.card{
+    padding: 5px;
+    &:hover{
+        cursor: pointer;
+    }
 }
 
-.item {
-    width: 25%;
-    padding: .4rem;
-}
-
-.item-content {
-    padding: .4rem;
-    background: $backgroundItemContent;
-    border-radius: .4rem;
-    color: $white;
+.card-content{
+    position:relative;
+    min-height: 8.5em;
+    padding: 5px;
+    background: $blue-light2;
     text-align: center;
-    box-shadow: 0px 1px 6px 2px rgba(0, 0, 0, .4);
+    color: $white;
+    border-radius: 4px;
+}
+
+.edit-content{
+    position: absolute;
+    top: .7em;
+    right: .7em;
 }

@@ -3,11 +3,10 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: $headerBackground;
+	background: $blue-light2;
     align-content: stretch;
     p{
-        color: $headerColor;
-        text-transform: uppercase;
+        color: $black;
         font-family: Base02, $fontRoboto;
     }
 }

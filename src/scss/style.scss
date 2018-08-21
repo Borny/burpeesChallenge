@@ -1,6 +1,5 @@
 // TOOLS
 @import 'tools/variables';
-@import 'tools/mixins';
 @import 'tools/placeholders';
 
 // BASE
@@ -12,8 +11,7 @@
 @import 'modules/modals';
 @import 'modules/grid';
 
-
 // COMPONENTS
 @import 'components/header';
+@import 'components/main';
 @import 'components/items';
-@import 'components/add-item';

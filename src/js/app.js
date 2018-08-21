@@ -39,7 +39,7 @@ addItemBtn.addEventListener('click', () => {
 // Add item with the 'Enter' key
 addItemInput.addEventListener('keydown', (e) => {
     const value = addItemInput.value;
-    if (e.code === 'Enter' && value) {
+    if (e.keyCode === 13 && value) {
         const addItemInputValue = addItemInput.value;
         createItem(addItemInputValue);
         addItemInput.value = ''; // empties the input

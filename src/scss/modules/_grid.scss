@@ -1,6 +1,8 @@
 .container{
     margin: 0 auto;
+    padding: 1rem;
     max-width: 1200px;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
+    background: $white;
 }

@@ -92,7 +92,6 @@ create.addEventListener('click', function(){
 
 })
 
-// Use of the map method (functional programming)
 var reload = function(){
     for (var key in data){
         createCard(data[key][0],data[key][1],data[key][2]);
@@ -184,9 +183,3 @@ clear.addEventListener('click', function(){
     document.location.reload(true);
 
 })
-
-console.log(data);
-
-function euroToDollar(euro){
-    return euro * 1.3;
-}
